@@ -3,20 +3,12 @@ A two-servo solar tracking system built on the ESP32. Eight LDR sensors detect t
 
 
 ## How It Works
-[ 8x LDR Sensors ]
-        │
-        ▼
-  [ ESP32 reads & smooths ADC values ]
-        │
-        ├──► Brightest direction? → Move servos (AZ + EL)
-                  │
-                  └──► Send JSON over WebSocket
-                                    │
-                                    ▼
-                        [ Node.js WS Server ]
-                                    │     
-                                    ▼
-                        [ Browser Dashboard ]
+8x LDR Sensors ->
+ESP32 reads & smooths ADC values ->
+Brightest direction? → Move servos (AZ + EL)->
+Send JSON over WebSocket->
+Node.js WS Server ->
+Browser Dashboard ->
 
 1. All 8 LDRs are sampled and passed through a rolling average (5-sample window).
 2. If all sensors are dark (< 200), the tracker remains in the current position.
