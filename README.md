@@ -8,7 +8,7 @@ ESP32 reads & smooths ADC values ->
 Brightest direction? → Move servos (AZ + EL)->
 Send JSON over WebSocket->
 Node.js WS Server ->
-Browser Dashboard ->
+Browser Dashboard 
 
 1. All 8 LDRs are sampled and passed through a rolling average (5-sample window).
 2. If all sensors are dark (< 200), the tracker remains in the current position.
